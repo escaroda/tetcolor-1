@@ -49,6 +49,8 @@ Template.game.onRendered(function () {
             break;
         case 32:
             console.log('spacebar');
+            GAME.moveDrop();
+            break;
         }
     });
 });
