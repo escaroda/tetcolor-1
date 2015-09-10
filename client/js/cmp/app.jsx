@@ -83,10 +83,8 @@ Stage = React.createClass({
         var matrix = this.getDefaultBinding().toJS(),
             acc = [];
         _.flatten(matrix).forEach(function (item, index) {
-            if (!!item) {
                 var posCls = "p" + index % 9 + "_" + Math.floor(index / 9);
                 acc.push(React.createElement("div", {className: posCls + " block c" + item, key: posCls}));
-            }
         });
         return React.createElement.apply(React, ["div", {className: "stage"}].concat(acc));
     }
