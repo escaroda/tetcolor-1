@@ -45,7 +45,7 @@ GameFigure = React.createClass({
     mixins: [Morearty.Mixin],
     render: function () {
         var binding = this.getDefaultBinding(),
-            figure = GAME.getCurrentFigureMatrix();
+            figure = MatrixHelper.rotateMatrix(GAME.getCurrentFigureMatrix(), binding.get("rotation"));
         return (
             <div className={"figure p" + binding.get("x") + "_" + binding.get("y")}>
                 <div className={"block p0_0 c" + figure[0][0]}></div>
