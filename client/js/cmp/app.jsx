@@ -56,7 +56,7 @@ GameFigure = React.createClass({
                 <div className={"block p2_1 c" + figure[1][2]}></div>
                 <div className={"block p0_2 c" + figure[2][0]}></div>
                 <div className={"block p1_2 c" + figure[2][1]}></div>
-                <div className={"block p2_2 c" + figure[2][3]}></div>
+                <div className={"block p2_2 c" + figure[2][2]}></div>
             </div>
         );
     }
