@@ -3,31 +3,17 @@ var firstRender = true;
 var listRenderHold = LaunchScreen.hold();
 listFadeInHold = null;
 
-Clock = (function () {
-    var timeoutId = null,
-        processTick = function () {
-
-        };
-    return {
-        start: function () {
-
-        },
-        pause: function () {
-
-        }
-    }
-}());
-
 Template.game.onRendered(function () {
     if (firstRender) {
 
-        window.GAME = this;
+        window.GAME = this.data;
 
         Bootstrap = React.createFactory(Ctx.bootstrap(App));
         React.render(
             Bootstrap(),
             document.getElementById('root')
         );
+        GAME.startGame();
 
         // Released in app-body.js
         listFadeInHold = LaunchScreen.hold();
@@ -45,14 +31,17 @@ Template.game.onRendered(function () {
         handleRight = function () {
             BINDING.set("figure.x", BINDING.get("figure.x") - 0 + 1);
             elPos[0] += 1;
+            GAME.moveRight()
         },
         handleLeft = function () {
             BINDING.set("figure.x", BINDING.get("figure.x") - 1);
             elPos[0] -= 1;
+            GAME.moveLeft()
         },
         handleDown = function () {
             BINDING.set("figure.y", BINDING.get("figure.y") + 1);
             elPos[1] += 1;
+            GAME.moveDown()
         };
 
     $('body').on('keydown', function (event) {
