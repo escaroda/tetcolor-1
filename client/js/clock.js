@@ -12,11 +12,14 @@ Clock = (function () {
             return this;
         },
         start: function () {
-            timeoutId = setInterval(processTick, currentGameSpeed);
+            if (!timeoutId) {
+                timeoutId = setInterval(processTick, currentGameSpeed);
+            }
             return this;
         },
         pause: function () {
             clearInterval(timeoutId);
+            timeoutId = null;
             return this;
         }
     }

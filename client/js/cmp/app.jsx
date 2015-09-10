@@ -34,6 +34,7 @@ App = React.createClass({
                     <GameFigure binding={binding.sub("figure")}/>
                 </div>
                 <Score binding={binding.sub("score")}/>
+                <Controls />
             </div>
         );
     }
@@ -65,7 +66,6 @@ GameFigure = React.createClass({
 Score = React.createClass({
     displayName: 'Score',
     mixins: [Morearty.Mixin],
-
     render: function () {
         var binding = this.getDefaultBinding();
         return (
@@ -75,6 +75,22 @@ Score = React.createClass({
         );
     }
 });
+
+Controls = React.createClass({
+    displayName: 'Controls',
+    mixins: [Morearty.Mixin],
+
+    render: function () {
+        return (
+            <div className="controls">
+                <button onClick={Clock.pause}>Pause</button>
+                <button onClick={Clock.start}>Start</button>
+            </div>
+        );
+    }
+});
+
+
 
 Stage = React.createClass({
     displayName: 'Stage',
