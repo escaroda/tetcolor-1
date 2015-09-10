@@ -22,7 +22,7 @@ Template.game.onRendered(function () {
         firstRender = false;
     }
 
-    var el = this.find('.element-matrix'),
+    var el = this.find('.figure'),
         elPos = [0, 0],
         blockSize = 30,
 

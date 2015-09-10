@@ -12,11 +12,11 @@ body
   height ($grid-height * $block-size)px
 for x in (0..$grid-width)
   for y in (0..$grid-height)
-    .p{y}_{x}
+    .p{x}_{y}
       left (x * $block-size)px
       top (y * $block-size)px
 
-.element-matrix
+.figure
   transition all .1s ease-in
   position absolute
 .block
@@ -41,7 +41,7 @@ for x in (0..$grid-width)
   position absolute
   for x in (0..2)
     for y in (0..2)
-      &.p{y}_{x}
+      &.p{x}_{y}
         left (x * $block-size)px
         top (y * $block-size)px
 
