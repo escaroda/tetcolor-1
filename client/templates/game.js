@@ -43,15 +43,15 @@ Template.game.onRendered(function () {
         blockSize = 30,
 
         handleRight = function () {
-            BINDING.set("figure.position.0", BINDING.get("figure.position.0") - 0 + 1);
+            BINDING.set("figure.x", BINDING.get("figure.x") - 0 + 1);
             elPos[0] += 1;
         },
         handleLeft = function () {
-            BINDING.set("figure.position.0", BINDING.get("figure.position.0") - 1);
+            BINDING.set("figure.x", BINDING.get("figure.x") - 1);
             elPos[0] -= 1;
         },
         handleDown = function () {
-            BINDING.set("figure.position.1", BINDING.get("figure.position.1") + 1);
+            BINDING.set("figure.y", BINDING.get("figure.y") + 1);
             elPos[1] += 1;
         };
 

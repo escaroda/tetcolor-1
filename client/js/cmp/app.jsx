@@ -31,7 +31,7 @@ App = React.createClass({
         <div>
           <div className="game-field">
             <Stage />
-            <GameFigure binding={binding.sub("gameFigure")} />
+            <GameFigure binding={binding.sub("figure")} />
           </div>
           <Score binding={binding.sub("score")} />
         </div>
