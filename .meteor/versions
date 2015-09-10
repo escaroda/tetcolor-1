@@ -13,6 +13,8 @@ caching-compiler@1.0.0-plugins.1
 caching-html-compiler@1.0.0
 callback-hook@1.0.4-plugins.0
 check@1.0.6-plugins.0
+coffeescript@1.0.7-plugins.1
+cosmos:browserify@0.4.0
 ddp@1.2.0-plugins.0
 ddp-client@1.2.0-plugins.0
 ddp-common@1.2.0-plugins.0
@@ -37,6 +39,7 @@ iron:dynamic-template@0.4.1
 iron:layout@0.4.1
 iron:router@0.9.4
 jquery@1.11.3-plugins.0_3
+jsx@0.1.6
 launch-screen@1.0.3-plugins.1
 less@2.5.0-plugins.0_2
 livedata@1.0.14-plugins.0
@@ -57,6 +60,11 @@ ordered-dict@1.0.4-plugins.0
 promise@0.4.8-plugins.0
 random@1.0.4-plugins.0
 rate-limit@1.0.0
+react@0.1.10
+react-meteor-data@0.1.6
+react-runtime@0.13.3_6
+react-runtime-dev@0.13.3_5
+react-runtime-prod@0.13.3_4
 reactive-dict@1.1.1-plugins.0
 reactive-var@1.0.6-plugins.0
 reload@1.1.4-plugins.0
