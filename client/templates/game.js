@@ -6,6 +6,13 @@ listFadeInHold = null;
 
 Template.game.onRendered(function () {
     if (firstRender) {
+        Bootstrap = React.createFactory(Ctx.bootstrap(App));
+        React.render(
+            Bootstrap(),
+            document.getElementById('root')
+        );
+
+
         // Released in app-body.js
         listFadeInHold = LaunchScreen.hold();
 
