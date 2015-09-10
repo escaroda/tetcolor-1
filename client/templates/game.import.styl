@@ -1,0 +1,39 @@
+$block-size = 20
+$grid-width = 7
+$grid-height = 20
+body
+  background #f2f2f3
+
+#game-field
+  width ($grid-width * $block-size)px
+  height ($grid-height * $block-size)px
+  border-right 10px solid black
+  border-left 10px solid black
+  border-bottom 10px solid black
+
+.element-matrix
+  position absolute
+//left 30px
+//top 40px
+.block
+  &.red
+    background-color red
+  &.cyan
+    background-color cyan
+  &.magenta
+    background-color magenta
+  &.green
+    background-color green
+  &.blue
+    background-color blue
+  &.yellow
+    background-color yellow
+  width $block-size px
+  height $block-size px
+  position absolute
+  for x in (0..2)
+    for y in (0..2)
+      &.p{x}{y}
+        left (x * $block-size)px
+        top (y * $block-size)px
+
