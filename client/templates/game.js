@@ -41,6 +41,7 @@ Template.game.onRendered(function () {
             break;
         case 38:
             console.log('up');
+            GAME.rotateFigure();
             break;
         case 40:
             console.log('down');
