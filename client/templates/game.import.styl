@@ -1,5 +1,5 @@
-$block-size = 20
-$grid-width = 7
+$block-size = 30
+$grid-width = 9
 $grid-height = 20
 body
   background #f2f2f3
@@ -7,11 +7,12 @@ body
 #game-field
   width ($grid-width * $block-size)px
   height ($grid-height * $block-size)px
-  border-right 10px solid black
-  border-left 10px solid black
-  border-bottom 10px solid black
+  border-right ($block-size)px solid black
+  border-left ($block-size)px solid black
+  border-bottom ($block-size)px solid black
 
 .element-matrix
+  transition all .1s ease-in
   position absolute
 //left 30px
 //top 40px
