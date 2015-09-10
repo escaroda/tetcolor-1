@@ -6,6 +6,7 @@ body
 
 .game-field
   position relative
+  margin 20px
 
 .stage
   width ($grid-width * $block-size)px
@@ -19,29 +20,37 @@ for x in (0..$grid-width)
 .figure
   transition all .1s ease-in
   position absolute
+
 .block
   &.c1
-    background-color red
+    background-color #37526d
   &.c2
-    background-color cyan
+    background-color #41a30d
   &.c3
-    background-color magenta
+    background-color #ffce38
   &.c4
-    background-color green
+    background-color #367d7d
   &.c5
-    background-color blue
+    background-color #d33502
   &.c6
-    background-color yellow
+    background-color #6ebcbc
   &.c0
-    visibility hidden
+    background-color none
+    border-right 1px solid lightgray
+    border-bottom 1px solid lightgray
+    box-shadow none
+    border-radius 0
+
   &.c-1
     background-color black
+    border-radius 0
   width $block-size px
   height $block-size px
   position absolute
+  border-radius 5px
+  box-shadow inset 0 0 5px 0 rgba(0,0,0,0.4);
   for x in (0..2)
     for y in (0..2)
       &.p{x}_{y}
         left (x * $block-size)px
         top (y * $block-size)px
-
