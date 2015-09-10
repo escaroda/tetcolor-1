@@ -48,7 +48,6 @@ Template.game.onRendered(function () {
         if (event.which == 13) {
             event.preventDefault();
         }
-        console.log('keydown', event.which);
         switch (event.which) {
         case 39:
             console.log('right');

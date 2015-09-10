@@ -12,6 +12,7 @@ Ctx = Morearty.createContext({
     }
   }
 });
+BINDING = Ctx.getBinding();
 
 App = React.createClass({
   displayName: 'App',
@@ -20,7 +21,6 @@ App = React.createClass({
   componentDidMount: function () {
     var binding = this.getDefaultBinding();
     Morearty.History.init(binding);
-    window.BINDING = binding;
     //binding.set('nowShowing', NOW_SHOWING.COMPLETED);
   },
 
@@ -45,7 +45,7 @@ GameFigure = React.createClass({
   mixins: [Morearty.Mixin],
   render: function () {
     var binding = this.getDefaultBinding(),
-        figure = [[0,1,2],[0,1,2],[]]
+        figure = GAME.getCurrentFigureMatrix();
     return (
         <div className={"figure p" + binding.get("x") + "_" + binding.get("y")}>
           <div className={"block p0_0 c" + figure[0][0]}></div>
