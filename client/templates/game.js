@@ -31,17 +31,14 @@ Template.game.onRendered(function () {
         blockSize = 30,
 
         handleRight = function () {
-            BINDING.set("figure.x", BINDING.get("figure.x") - 0 + 1);
             elPos[0] += 1;
             GAME.moveRight()
         },
         handleLeft = function () {
-            BINDING.set("figure.x", BINDING.get("figure.x") - 1);
             elPos[0] -= 1;
             GAME.moveLeft()
         },
         handleDown = function () {
-            BINDING.set("figure.y", BINDING.get("figure.y") + 1);
             elPos[1] += 1;
             GAME.moveDown()
         };
