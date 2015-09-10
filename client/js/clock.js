@@ -6,6 +6,13 @@ Clock = (function () {
         processTick = function () {
             GAME.moveDown();
         };
+
+    BINDING.addListener('level', function (changes) {
+        console.log(changes);
+        clearInterval(timeoutId);
+        timeoutId = setInterval(processTick, currentGameSpeed());
+    });
+
     return {
         start: function () {
             if (!timeoutId) {

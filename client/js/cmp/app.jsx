@@ -87,7 +87,7 @@ Controls = React.createClass({
         return (
             <div className="controls">
                 <button onClick={Clock.start} className="start">Start</button>
-                <button onClick={Clock.pause} className="pause">Pause</button>
+                <button onClick={Clock.pause} className="pause">Stop tick</button>
             </div>
         );
     }
