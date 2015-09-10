@@ -24,6 +24,8 @@ Template.game.onRendered(function () {
         firstRender = false;
     }
 
+    Clock.init();
+
     var el = this.find('.figure'),
         elPos = [0, 0],
         blockSize = 30,
@@ -51,11 +53,11 @@ Template.game.onRendered(function () {
         switch (event.which) {
         case 39:
             console.log('right');
-            handleRight();
+            GAME.moveRight();
             break;
         case 37:
             console.log('left');
-            handleLeft();
+            GAME.moveLeft();
             break;
         case 38:
             console.log('up');
