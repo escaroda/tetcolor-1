@@ -26,23 +26,6 @@ Template.game.onRendered(function () {
 
     Clock.init();
 
-    var el = this.find('.figure'),
-        elPos = [0, 0],
-        blockSize = 30,
-
-        handleRight = function () {
-            elPos[0] += 1;
-            GAME.moveRight()
-        },
-        handleLeft = function () {
-            elPos[0] -= 1;
-            GAME.moveLeft()
-        },
-        handleDown = function () {
-            elPos[1] += 1;
-            GAME.moveDown()
-        };
-
     $('body').on('keydown', function (event) {
         if (event.which == 13) {
             event.preventDefault();
@@ -61,13 +44,11 @@ Template.game.onRendered(function () {
             break;
         case 40:
             console.log('down');
-            handleDown();
+            GAME.moveDown();
             break;
         case 32:
             console.log('spacebar');
         }
-
-        el.style.transform = "translate(" + blockSize * elPos[0] + "px, " + blockSize * elPos[1] + "px)"
     });
 });
 
