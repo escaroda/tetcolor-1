@@ -30,7 +30,7 @@ App = React.createClass({
         return (
             <div>
                 <div className="game-field">
-                    <Stage />
+                    <Stage binding={binding.sub("stage")} />
                     <GameFigure binding={binding.sub("figure")}/>
                 </div>
                 <Score binding={binding.sub("score")}/>
@@ -80,8 +80,9 @@ Stage = React.createClass({
     displayName: 'Stage',
     mixins: [Morearty.Mixin],
     render: function () {
-        var acc = [];
-        _.flatten(GAME.getMatrix()).forEach(function (item, index) {
+        var matrix = this.getDefaultBinding().toJS(),
+            acc = [];
+        _.flatten(matrix).forEach(function (item, index) {
             if (!!item) {
                 var posCls = "p" + index % 9 + "_" + Math.floor(index / 9);
                 acc.push(React.createElement("div", {className: posCls + " block c" + item, key: posCls}));
