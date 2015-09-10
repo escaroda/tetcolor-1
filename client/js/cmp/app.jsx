@@ -34,8 +34,10 @@ App = React.createClass({
                     <Stage binding={binding.sub("stage")} />
                     <GameFigure binding={binding.sub("figure")}/>
                 </div>
-                <Score binding={binding.sub("score")}/>
-                <Controls />
+                <div className="info-field">
+                    <Score binding={binding.sub("score")}/>
+                    <Controls />
+                </div>
             </div>
         );
     }
@@ -70,9 +72,9 @@ Score = React.createClass({
     render: function () {
         var binding = this.getDefaultBinding();
         return (
-            <div className="score">
-                {binding.get()}
-            </div>
+            <h2 className="score">
+                Your score: <span className="number">{binding.get()}</span>
+            </h2>
         );
     }
 });
@@ -84,8 +86,8 @@ Controls = React.createClass({
     render: function () {
         return (
             <div className="controls">
-                <button onClick={Clock.pause}>Pause</button>
-                <button onClick={Clock.start}>Start</button>
+                <button onClick={Clock.start} className="start">Start</button>
+                <button onClick={Clock.pause} className="pause">Pause</button>
             </div>
         );
     }

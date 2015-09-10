@@ -6,6 +6,12 @@ body
 
 .game-field
   position relative
+  float left
+  margin 20px
+
+.info-field
+  float left
+  position relative
   margin 20px
 
 .stage
@@ -58,8 +64,20 @@ for x in (0..$grid-width)
         left (x * $block-size)px
         top (y * $block-size)px
 
+.score
+  margin-bottom 10px
+  .number
+    font-weight bold
+
 .controls
   button
-    display block
     padding 5px 10px
-    margin 10px 20px
+    margin 0 10px 10px 0
+    &.start
+      background-color #41a30d
+      color #003d00
+      border 1px solid #003d00
+    &.pause
+      background-color #ffce38
+      color #663500
+      border 1px solid #663500
