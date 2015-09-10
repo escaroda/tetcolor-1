@@ -31,12 +31,13 @@ App = React.createClass({
         return (
             <div>
                 <div className="game-field">
-                    <Stage binding={binding.sub("stage")} />
+                    <Stage binding={binding.sub("stage")}/>
                     <GameFigure binding={binding.sub("figure")}/>
                 </div>
                 <div className="info-field">
                     <Score binding={binding.sub("score")}/>
                     <Controls />
+                    <NextFigure binding={binding.sub("figure.index")}/>
                 </div>
             </div>
         );
@@ -49,9 +50,10 @@ GameFigure = React.createClass({
     mixins: [Morearty.Mixin],
     render: function () {
         var binding = this.getDefaultBinding(),
+            animate = (binding.get('y')) === 0 ? 'no-animation ' : '',
             figure = MatrixHelper.rotateMatrix(GAME.getCurrentFigureMatrix(), binding.get("rotation"));
         return (
-            <div className={"figure p" + binding.get("x") + "_" + binding.get("y")}>
+            <div className={"figure "+animate+"p" + binding.get("x") + "_" + binding.get("y")}>
                 <div className={"block p0_0 c" + figure[0][0]}></div>
                 <div className={"block p1_0 c" + figure[0][1]}></div>
                 <div className={"block p2_0 c" + figure[0][2]}></div>
@@ -93,7 +95,31 @@ Controls = React.createClass({
     }
 });
 
+NextFigure = React.createClass({
+    displayName: 'NextFigure',
+    mixins: [Morearty.Mixin],
 
+    render: function () {
+        var figure = GAME.getNextFigureMatrix();
+        return (
+            <div className="next-figure-container">
+                <h3>Next element</h3>
+                <div className="next-figure">
+
+                    <div className={"block p0_0 c" + figure[0][0]}></div>
+                    <div className={"block p1_0 c" + figure[0][1]}></div>
+                    <div className={"block p2_0 c" + figure[0][2]}></div>
+                    <div className={"block p0_1 c" + figure[1][0]}></div>
+                    <div className={"block p1_1 c" + figure[1][1]}></div>
+                    <div className={"block p2_1 c" + figure[1][2]}></div>
+                    <div className={"block p0_2 c" + figure[2][0]}></div>
+                    <div className={"block p1_2 c" + figure[2][1]}></div>
+                    <div className={"block p2_2 c" + figure[2][2]}></div>
+                </div>
+            </div>
+        );
+    }
+});
 
 Stage = React.createClass({
     displayName: 'Stage',
@@ -102,8 +128,8 @@ Stage = React.createClass({
         var matrix = this.getDefaultBinding().toJS(),
             acc = [];
         _.flatten(matrix).forEach(function (item, index) {
-                var posCls = "p" + index % 9 + "_" + Math.floor(index / 9);
-                acc.push(React.createElement("div", {className: posCls + " block c" + item, key: posCls}));
+            var posCls = "p" + index % 9 + "_" + Math.floor(index / 9);
+            acc.push(React.createElement("div", {className: posCls + " block c" + item, key: posCls}));
         });
         return React.createElement.apply(React, ["div", {className: "stage"}].concat(acc));
     }

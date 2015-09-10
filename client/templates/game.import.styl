@@ -23,7 +23,23 @@ for x in (0..$grid-width)
       left (x * $block-size)px
       top (y * $block-size)px
 
+
+.next-figure-container
+  h3
+    margin-bottom 10px;
+.next-figure
+  clear both
+  position relative
+  border 1px solid grey
+  width (3 * $block-size)px
+  height (3 * $block-size)px
+  .block.c0
+    visibility none
+    //border 0
+
 .figure
+  &.no-animation
+    transition none
   transition all .1s ease-in
   position absolute
   .block.c0
