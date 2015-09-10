@@ -51,7 +51,7 @@ Template.game.onRendered(function () {
 });
 
 Template.game.helpers({
-    //heleprs
+
 });
 
 
