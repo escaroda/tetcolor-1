@@ -10,17 +10,15 @@ body
 .stage
   width ($grid-width * $block-size)px
   height ($grid-height * $block-size)px
-  for x in (0..$grid-width)
-    for y in (0..$grid-height)
-      .p{y}_{x}
-        left (x * $block-size)px
-        top (y * $block-size)px
+for x in (0..$grid-width)
+  for y in (0..$grid-height)
+    .p{y}_{x}
+      left (x * $block-size)px
+      top (y * $block-size)px
 
 .element-matrix
   transition all .1s ease-in
   position absolute
-  left 0
-  top 0
 .block
   &.c1
     background-color red
@@ -43,7 +41,7 @@ body
   position absolute
   for x in (0..2)
     for y in (0..2)
-      &.p{y}{x}
+      &.p{y}_{x}
         left (x * $block-size)px
         top (y * $block-size)px
 
