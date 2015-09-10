@@ -9,3 +9,15 @@ Meteor.publish('privateGames', function () {
         this.ready();
     }
 });
+
+Meteor.publish("games", function () {
+    return Games.find({});
+});
+Meteor.publish("figures", function () {
+    return Figures.find({});
+});
+
+Meteor.publish("gameFigures", function () {
+    //TODO filter by permission
+    return GameFigures.find({});
+});
