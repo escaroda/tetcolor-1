@@ -6,11 +6,15 @@ body
 
 .game-field
   position relative
+
+.stage
   width ($grid-width * $block-size)px
   height ($grid-height * $block-size)px
-  border-right ($block-size)px solid black
-  border-left ($block-size)px solid black
-  border-bottom ($block-size)px solid black
+  for x in (0..$grid-width)
+    for y in (0..$grid-height)
+      .p{y}_{x}
+        left (x * $block-size)px
+        top (y * $block-size)px
 
 .element-matrix
   transition all .1s ease-in
@@ -32,6 +36,8 @@ body
     background-color yellow
   &.c0
     visibility hidden
+  &.c-1
+    background-color black
   width $block-size px
   height $block-size px
   position absolute
