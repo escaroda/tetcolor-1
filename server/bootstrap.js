@@ -6,6 +6,8 @@ Meteor.startup(function () {
         var data = [
             {
                 name: "x1",
+                matrixWidth: 3,
+                matrixHeight: 3,
                 matrix: []
                     .concat("000")
                     .concat("010")
@@ -14,6 +16,8 @@ Meteor.startup(function () {
             },
             {
                 name: "x2",
+                matrixWidth: 3,
+                matrixHeight: 3,
                 matrix: []
                     .concat("010")
                     .concat("010")
@@ -22,6 +26,8 @@ Meteor.startup(function () {
             },
             {
                 name: "x3",
+                matrixWidth: 3,
+                matrixHeight: 3,
                 matrix: []
                     .concat("010")
                     .concat("010")
@@ -30,6 +36,8 @@ Meteor.startup(function () {
             },
             {
                 name: "corner",
+                matrixWidth: 3,
+                matrixHeight: 3,
                 matrix: []
                     .concat("010")
                     .concat("011")
