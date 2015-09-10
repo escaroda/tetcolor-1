@@ -9,10 +9,12 @@ Template.game.onRendered(function () {
         window.GAME = this.data;
 
         Bootstrap = React.createFactory(Ctx.bootstrap(App));
+
         React.render(
             Bootstrap(),
             document.getElementById('root')
         );
+
         GAME.startGame();
 
         // Released in app-body.js
@@ -23,8 +25,6 @@ Template.game.onRendered(function () {
 
         firstRender = false;
     }
-
-    Clock.init();
 
     $('body').on('keydown', function (event) {
         if (event.which == 13) {
@@ -55,13 +55,6 @@ Template.game.onRendered(function () {
     });
 });
 
-Template.game.helpers({
+Template.game.helpers({});
 
-});
-
-
-Template.game.events({
-    'body keypress': function (e) {
-        console.log('key', e);
-    }
-});
+Template.game.events({});

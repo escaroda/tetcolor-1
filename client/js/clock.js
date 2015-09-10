@@ -1,19 +1,15 @@
 Clock = (function () {
     var timeoutId = null,
-        currentGameSpeed = 1000,
+        currentGameSpeed = function () {
+            return 1000 / BINDING.get('level');
+        },
         processTick = function () {
             GAME.moveDown();
         };
     return {
-        init: function () {
-            console.log('init clock');
-
-            this.start();
-            return this;
-        },
         start: function () {
             if (!timeoutId) {
-                timeoutId = setInterval(processTick, currentGameSpeed);
+                timeoutId = setInterval(processTick, currentGameSpeed());
             }
             return this;
         },

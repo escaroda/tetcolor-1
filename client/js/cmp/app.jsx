@@ -1,6 +1,7 @@
 Ctx = Morearty.createContext({
     initialState: {
         gamePhase: PHASE.NOT_STARTED,
+        level: 1,
         score: 0,
         stage: {},
         figure: {
