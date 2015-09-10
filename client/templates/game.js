@@ -3,6 +3,21 @@ var firstRender = true;
 var listRenderHold = LaunchScreen.hold();
 listFadeInHold = null;
 
+Clock = (function () {
+    var timeoutId = null,
+        processTick = function () {
+
+        };
+    return {
+        start: function () {
+
+        },
+        pause: function () {
+
+        }
+    }
+}());
+
 
 Template.game.onRendered(function () {
     if (firstRender) {
@@ -22,17 +37,20 @@ Template.game.onRendered(function () {
         firstRender = false;
     }
 
-    var el = this.find('.element-matrix'),
+    var el = this.find('.figure'),
         elPos = [0, 0],
         blockSize = 30,
 
         handleRight = function () {
+            BINDING.set("figure.position.0", BINDING.get("figure.position.0") - 0 + 1);
             elPos[0] += 1;
         },
         handleLeft = function () {
+            BINDING.set("figure.position.0", BINDING.get("figure.position.0") - 1);
             elPos[0] -= 1;
         },
         handleDown = function () {
+            BINDING.set("figure.position.1", BINDING.get("figure.position.1") + 1);
             elPos[1] += 1;
         };
 

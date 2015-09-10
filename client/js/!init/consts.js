@@ -8,3 +8,5 @@ PHASE = Object.freeze({
     ACTIVE: "active",
     PAUSED: "paused"
 });
+
+TICK_INTERVAL = 300;
