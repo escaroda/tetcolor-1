@@ -5,6 +5,7 @@ body
   background #f2f2f3
 
 #game-field
+  position relative
   width ($grid-width * $block-size)px
   height ($grid-height * $block-size)px
   border-right ($block-size)px solid black
@@ -14,8 +15,8 @@ body
 .element-matrix
   transition all .1s ease-in
   position absolute
-//left 30px
-//top 40px
+  left 0
+  top 0
 .block
   &.red
     background-color red
@@ -29,12 +30,14 @@ body
     background-color blue
   &.yellow
     background-color yellow
+  &.hidden
+    visibility hidden
   width $block-size px
   height $block-size px
   position absolute
   for x in (0..2)
     for y in (0..2)
-      &.p{x}{y}
+      &.p{y}{x}
         left (x * $block-size)px
         top (y * $block-size)px
 
