@@ -14,9 +14,10 @@ Clock = (function () {
     });
 
     return {
-        start: function () {
+        start: function (speedRatio) {
+            speedRatio = speedRatio || 1;
             if (!timeoutId) {
-                timeoutId = setInterval(processTick, currentGameSpeed());
+                timeoutId = setInterval(processTick, currentGameSpeed() * speedRatio);
             }
             return this;
         },
@@ -24,6 +25,9 @@ Clock = (function () {
             clearInterval(timeoutId);
             timeoutId = null;
             return this;
+        },
+        quickTick: function() {
+            this.pause().start(0.2);
         }
     }
 }());

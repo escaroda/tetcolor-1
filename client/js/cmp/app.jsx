@@ -88,8 +88,8 @@ Controls = React.createClass({
     render: function () {
         return (
             <div className="controls">
-                <button onClick={Clock.start} className="start">Start</button>
-                <button onClick={Clock.pause} className="pause">Stop tick</button>
+                <button onClick={()=>Clock.start()} className="start">Start</button>
+                <button onClick={()=>Clock.pause()} className="pause">Stop tick</button>
             </div>
         );
     }
