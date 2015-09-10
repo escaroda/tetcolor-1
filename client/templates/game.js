@@ -32,23 +32,18 @@ Template.game.onRendered(function () {
         }
         switch (event.which) {
         case 39:
-            console.log('right');
             GAME.moveRight();
             break;
         case 37:
-            console.log('left');
             GAME.moveLeft();
             break;
         case 38:
-            console.log('up');
             GAME.rotateFigure();
             break;
         case 40:
-            console.log('down');
             GAME.moveDown();
             break;
         case 32:
-            console.log('spacebar');
             GAME.moveDrop();
             break;
         }
