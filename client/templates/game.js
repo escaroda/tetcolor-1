@@ -18,15 +18,16 @@ Clock = (function () {
     }
 }());
 
-
 Template.game.onRendered(function () {
     if (firstRender) {
+
+        window.GAME = this;
+
         Bootstrap = React.createFactory(Ctx.bootstrap(App));
         React.render(
             Bootstrap(),
             document.getElementById('root')
         );
-
 
         // Released in app-body.js
         listFadeInHold = LaunchScreen.hold();

@@ -1,15 +1,14 @@
 Ctx = Morearty.createContext({
   initialState: {
-    phase: PHASE.NOT_STARTED,
+    gamePhase: PHASE.NOT_STARTED,
     score: 0,
     stage: {},
     figure: {
-      position: [4,0],
-      content: [
-        [0,1,0],
-        [0,1,0],
-        [0,1,0]
-      ]
+      index: null,
+      x: 4,
+      y: 0,
+      figure_id: null,
+      rotation: 0 // 0...3
     }
   }
 });
@@ -32,25 +31,23 @@ App = React.createClass({
         <div>
           <div className="game-field">
             <Stage />
-            <Figure binding={binding.sub("figure")} />
+            <GameFigure binding={binding.sub("gameFigure")} />
           </div>
           <Score binding={binding.sub("score")} />
         </div>
-
     );
   }
 });
 
 
-Figure = React.createClass({
-  displayName: 'Figure',
+GameFigure = React.createClass({
+  displayName: 'gameFigure',
   mixins: [Morearty.Mixin],
   render: function () {
     var binding = this.getDefaultBinding(),
-        pos = binding.get("position").toJS(),
-        figure = binding.get("content").toJS();
+        figure = [[0,1,2],[0,1,2],[]]
     return (
-        <div className={"figure p" + pos[0] + "_" + pos[1]}>
+        <div className={"figure p" + binding.get("x") + "_" + binding.get("y")}>
           <div className={"block p0_0 c" + figure[0][0]}></div>
           <div className={"block p1_0 c" + figure[0][1]}></div>
           <div className={"block p2_0 c" + figure[0][2]}></div>
