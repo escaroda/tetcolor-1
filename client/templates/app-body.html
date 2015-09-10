@@ -24,9 +24,9 @@
       {{/if}}
 
       <div class="list-todos">
-        <a class="js-new-list link-list-new"><span class="icon-plus"></span>New List</a>
+        <a class="js-new-list link-list-new">Start New Game</a>
 
-        {{#each lists}}
+        {{#each games}}
           <a href="{{pathFor 'game'}}" class="list-todo {{activeListClass}}" title="{{name}}">
             {{#if userId}}
               <span class="icon-lock"></span>

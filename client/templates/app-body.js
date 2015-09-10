@@ -73,8 +73,8 @@ Template.appBody.helpers({
   userMenuOpen: function() {
     return Session.get(USER_MENU_KEY);
   },
-  lists: function() {
-    return Lists.find();
+  games: function() {
+    return Games.find();
   },
   activeListClass: function() {
     var current = Router.current();
@@ -117,13 +117,13 @@ Template.appBody.events({
     // if we are on a private list, we'll need to go to a public one
     var current = Router.current();
     if (current.route.name === 'game' && current.data().userId) {
-      Router.go('game', Lists.findOne({userId: {$exists: false}}));
+      Router.go('game', Games.findOne({userId: {$exists: false}}));
     }
   },
 
   'click .js-new-list': function() {
-    var list = {name: Lists.defaultName(), incompleteCount: 0};
-    list._id = Lists.insert(list);
+    var list = {name: Games.defaultName(), incompleteCount: 0};
+    list._id = Games.insert(list);
 
     Router.go('game', list);
   }
