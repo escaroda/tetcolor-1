@@ -48,6 +48,24 @@ Template.game.onRendered(function () {
             break;
         }
     });
+
+    $(this.find(".game-field")).touchwipe({
+        wipeDown: function () {
+            GAME.rotateFigure();
+        },
+        wipeUp: function () {
+            GAME.moveDown();
+        },
+        wipeLeft: function () {
+            GAME.moveLeft();
+        },
+        wipeRight: function () {
+            GAME.moveRight();
+        },
+        preventDefaultEvents: false
+    }).click(function(){
+        GAME.moveDrop();
+    });
 });
 
 Template.game.helpers({});
